@@ -3,14 +3,14 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_1_data_preparation/data_loaders/ingest.py
+      path: unit_2_training/data_loaders/ingest.py
   downstream_blocks:
   - prepare
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Ingest
+  name: ingest
   retry_config: null
   status: executed
   timeout: null
@@ -21,14 +21,14 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_1_data_preparation/transformers/prepare.py
+      path: unit_2_training/transformers/prepare.py
   downstream_blocks:
   - build
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Prepare
+  name: prepare
   retry_config: null
   status: executed
   timeout: null
@@ -40,13 +40,13 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_1_data_preparation/data_exporters/build.py
+      path: unit_2_training/data_exporters/build.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Build
+  name: build
   retry_config: null
   status: executed
   timeout: null
@@ -65,7 +65,7 @@ executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: Data preparation
+name: data_preparation
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}

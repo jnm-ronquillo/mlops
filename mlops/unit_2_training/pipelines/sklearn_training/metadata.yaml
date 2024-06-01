@@ -3,69 +3,72 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_1_data_preparation/data_loaders/ingest.py
+      path: unit_2_training/global_data_products/training_set.py
+    global_data_product:
+      uuid: training_set
   downstream_blocks:
-  - prepare
+  - hyperparameter_tuning/sklearn
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Ingest
+  name: Training set
   retry_config: null
   status: executed
   timeout: null
-  type: data_loader
+  type: global_data_product
   upstream_blocks: []
-  uuid: ingest
+  uuid: training_set
 - all_upstream_blocks_executed: true
-  color: null
+  color: teal
   configuration:
+    dynamic: true
     file_source:
-      path: unit_1_data_preparation/transformers/prepare.py
+      path: unit_2_training/custom/load_models.py
   downstream_blocks:
-  - build
+  - hyperparameter_tuning/sklearn
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Prepare
+  name: Load models
   retry_config: null
   status: executed
   timeout: null
-  type: transformer
-  upstream_blocks:
-  - ingest
-  uuid: prepare
+  type: custom
+  upstream_blocks: []
+  uuid: load_models
 - all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:
-      path: unit_1_data_preparation/data_exporters/build.py
+      path: unit_2_training/transformers/hyperparameter_tuning/sklearn.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Build
+  name: Hyperparameter tuning/sklearn
   retry_config: null
-  status: executed
+  status: failed
   timeout: null
-  type: data_exporter
+  type: transformer
   upstream_blocks:
-  - prepare
-  uuid: build
+  - training_set
+  - load_models
+  uuid: hyperparameter_tuning/sklearn
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-05-28 13:24:23.744950+00:00'
+created_at: '2024-06-01 20:56:13.176980+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: Data preparation
+name: sklearn training
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -75,10 +78,9 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: data_preparation
+uuid: sklearn_training
 variables:
-  split_on_feature: lpep_pickup_datetime
-  split_on_feature_value: '2024-02-01'
-  target: duration
-variables_dir: /home/src/mage_data/unit_1_data_preparation
+  max_evaluations: 50
+  random_state: 7
+variables_dir: /home/src/mage_data/unit_2_training
 widgets: []
