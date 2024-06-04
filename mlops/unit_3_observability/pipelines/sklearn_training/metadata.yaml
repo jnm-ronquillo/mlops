@@ -19,23 +19,6 @@ blocks:
   upstream_blocks: []
   uuid: training_set
 - all_upstream_blocks_executed: true
-  color: null
-  configuration:
-    file_source:
-      path: unit_2_training/markdowns/dynamic_block_info.md
-  downstream_blocks: []
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: markdown
-  name: Dynamic block info
-  retry_config: null
-  status: updated
-  timeout: null
-  type: markdown
-  upstream_blocks: []
-  uuid: dynamic_block_info
-- all_upstream_blocks_executed: true
   color: teal
   configuration:
     dynamic: true
@@ -119,5 +102,5 @@ uuid: sklearn_training
 variables:
   max_evaluations: 1
   random_state: 7
-variables_dir: /root/.mage_data/unit_3_observability
+variables_dir: /home/src/mage_data/unit_3_observability
 widgets: []

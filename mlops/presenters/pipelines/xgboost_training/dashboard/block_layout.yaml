@@ -1,4 +1,8 @@
 blocks:
+  enchanting_scholar:
+    name: enchanting scholar
+    type: chart
+    uuid: enchanting_scholar
   shap_values:
     configuration:
       chart_type: custom
@@ -41,11 +45,12 @@ blocks:
     type: chart
     uuid: shap_values_force_chart
 layout:
-- - block_uuid: shap_values_bar
-    height: 400
+- - block_uuid: shap_values
     width: 1
-  - block_uuid: shap_values
+  - block_uuid: shap_values_bar
     height: 400
     width: 1
 - - block_uuid: shap_values_force_chart
+    width: 1
+- - block_uuid: enchanting_scholar
     width: 1

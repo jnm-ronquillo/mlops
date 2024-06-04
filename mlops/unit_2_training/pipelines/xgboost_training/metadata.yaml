@@ -7,7 +7,7 @@ blocks:
     global_data_product:
       uuid: training_set
   downstream_blocks:
-  - hyperparameter_tunning/xgboost
+  - hyperparameter_tuning/xgboost
   - xgboost
   executor_config: null
   executor_type: local_python
@@ -24,21 +24,21 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_2_training/transformers/hyperparameter_tunning/xgboost.py
+      path: unit_2_training/transformers/hyperparameter_tuning/xgboost.py
   downstream_blocks:
   - xgboost
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: Hyperparameter tunning/XGBoost
+  name: Hyperparameter tuning/XGBoost
   retry_config: null
   status: executed
   timeout: null
   type: transformer
   upstream_blocks:
   - training_set
-  uuid: hyperparameter_tunning/xgboost
+  uuid: hyperparameter_tuning/xgboost
 - all_upstream_blocks_executed: true
   color: null
   configuration:
@@ -56,7 +56,7 @@ blocks:
   type: data_exporter
   upstream_blocks:
   - training_set
-  - hyperparameter_tunning/xgboost
+  - hyperparameter_tuning/xgboost
   uuid: xgboost
 cache_block_output_in_memory: false
 callbacks: []
