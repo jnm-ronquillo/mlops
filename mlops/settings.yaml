@@ -1,4 +1,6 @@
 projects:
+  my_homework:
+    path: my_homework
   unit_0_setup: {}
   unit_1_data_preparation: {}
   unit_2_training: {}
