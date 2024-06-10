@@ -32,14 +32,14 @@ blocks:
     configuration:
       chart_type: time series bar chart
       group_by:
-      - start_time
+      - start_time_cleaned
       metrics:
       - aggregation: average
         column: mse_Booster
       - aggregation: average
-        column: mse_LinearRegression
-      - aggregation: average
         column: mse_Lasso
+      - aggregation: average
+        column: mse_LinearRegression
       time_interval: hour
       x_axis_label_format: hh
     data_source:
@@ -58,13 +58,14 @@ blocks:
       - model
       metrics:
       - aggregation: count_distinct
-        column: run_uuid
+        column: run_id
       y_sort_order: descending
       y_tooltip_label_format: return `${value} total runs`
     data_source:
       type: chart_code
     error: null
     name: Total runs by model
+    name_new: Total runs by model
     skip_render: false
     type: chart
     uuid: total_runs_by_model
@@ -76,14 +77,14 @@ blocks:
         y_grid_lines_hidden: true
         y_values_smooth: true
       group_by:
-      - start_time
+      - start_time_cleaned
       metrics:
       - aggregation: average
         column: rmse_Booster
       - aggregation: average
-        column: rmse_LinearRegression
-      - aggregation: average
         column: rmse_Lasso
+      - aggregation: average
+        column: rmse_LinearRegression
       time_interval: minute
       x_axis_label_format: h:mm
       x_grid_lines_hidden: true

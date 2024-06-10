@@ -54,6 +54,7 @@ def load_data(*args, **kwargs) -> pd.DataFrame:
                 run_id=run_id,
                 run_uuid=run_uuid,
                 start_time=start_time,
+                start_time_cleaned = int(start_time.timestamp()),
                 start_time_day=start_time_day,
                 start_time_format_day=start_time_format_day,
                 start_time_format_hour=start_time_format_hour,
